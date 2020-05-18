@@ -4,8 +4,8 @@ public class BallMovement{
     private double velocityY = 2.00;
     private double friction = 0.80;
     //Table Interaction
-    public void moveCueBall(Ball b){
-            arena.pause();
+    public void moveCueBall(Ball b, GameArena a){
+            a.pause();
             //Conditions
             if(b.getXPosition()>=1239.00){
                 velocityX = -1.00*velocityX;

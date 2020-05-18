@@ -39,7 +39,7 @@ public class Driver{
                 velocityY = -1.00*velocityY;
             }*/
             BallMovement cueB = new BallMovement();
-            cueB.moveCueBall(cueBall);
+            cueB.moveCueBall(cueBall,arena);
         }
     }
 }
