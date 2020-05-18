@@ -23,7 +23,7 @@ public class Driver{
         double velocityX = 1.00;
         double velocityY = 2.00;
         BallMovement cueB = new BallMovement();
-        double friction = 0.8;
+        double friction = 0.95;
         while(true){
             arena.pause();
             cueB.moveCueBall(cueBall,velocityX,velocityY);
