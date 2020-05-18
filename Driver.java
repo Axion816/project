@@ -18,10 +18,8 @@ public class Driver{
         Line headSpot = new Line(500.00,251.99,500.00,748.99,5.00,"WHITE",3);
         arena.addLine(headSpot);
         //Movement
-        
         double speedX = 0.05;
         double speedY = 0.00;
-        cueBall.move(speedX,speedY);
     
     }
 }
