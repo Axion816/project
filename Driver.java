@@ -2,7 +2,7 @@ public class Driver{
     public static void main(String[] Args){
         GameArena arena = new GameArena(1500,1000);
         //Balls
-        Ball cueBall = new Ball(500.00,500.00,22.00,"WHITE",3);
+        Ball cueBall = new Ball(500.00,500.00,22.00,"WHITE",4);
         arena.addBall(cueBall);
         //Text Title
         Text title = new Text("Welcome to Cool Pool!",14,20.00,20.00,"WHITE");
@@ -15,5 +15,7 @@ public class Driver{
         //Outlay
         Rectangle powerBar = new Rectangle(500.00,850.00,500.00,50.00,"RED");
         arena.addRectangle(powerBar);
+        Line headSpot = new Line(500.00,250.00,500.00,750.00,1.00,"WHITE",3);
+        arena.addLine(headspot);
     }
 }
