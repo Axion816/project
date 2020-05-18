@@ -23,9 +23,13 @@ public class Driver{
         double velocityX = 1.00;
         double velocityY = 2.00;
         BallMovement cueB = new BallMovement();
+        double velocityX = 1.00;
+        double velocityY = 2.00;
         while(true){
             arena.pause();
-            cueB.moveCueBall(cueBall);
+            cueB.moveCueBall(cueBall,velocityX,velocityY);
+            velocityX=friction*velocityX;
+            velocityY=friction*velocityY;
         }
     }
 }
