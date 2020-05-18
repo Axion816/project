@@ -17,6 +17,8 @@ public class Driver{
         arena.addRectangle(powerBar);
         Line headSpot = new Line(500.00,251.99,500.00,748.99,5.00,"WHITE",3);
         arena.addLine(headSpot);
-        cueBall.move(200.00,0.00);
+        if(GameArena.escPressed()==true){
+            GameArena.exit();
+        }
     }
 }
