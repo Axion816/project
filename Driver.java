@@ -21,15 +21,21 @@ public class Driver{
         arena.addLine(headSpot);
         //Movement
         double velocityX = 1.00;
-        double velocityY = 0.00;
+        double velocityY = 2.00;
         while(true){
             arena.pause();
             cueBall.move(velocityX,velocityY);
             if(cueBall.getXPosition()>=1239.00){
-                velocityX = -1.00;
+                velocityX = -1.00*velocityX;
             }
             if(cueBall.getXPosition()<=261.00){
-                velocityX = 1.00;
+                velocityX = -1.00*velocityX;
+            }
+            if(cueBall.getYPosition()>=739.00){
+                velocityY = -1.00*velocityY;
+            }
+            if(cueBall.getYPosition()<=261.00){
+                velocityY = -1.00*velocityY;
             }
 
         }
