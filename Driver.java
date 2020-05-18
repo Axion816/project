@@ -19,8 +19,8 @@ public class Driver{
         arena.addLine(headSpot);
         //Movement
         while(true){
-            public double speedX = 2.00;
-            public double speedY = 0.00;
+            double speedX = 2.00;
+            double speedY = 0.00;
             cueBall.move(speedX,speedY);
         }
     }
