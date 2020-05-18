@@ -20,15 +20,12 @@ public class Driver{
         Line headSpot = new Line(500.00,251.99,500.00,748.99,5.00,"WHITE",3);
         arena.addLine(headSpot);
         //Movement
-        double velocityX = 1.00;
-        double velocityY = 2.00;
+        double velocityX = 5.00;
+        double velocityY = 5.00;
         BallMovement cueB = new BallMovement();
-        double friction = 0.99;
         while(true){
             arena.pause();
             cueB.moveCueBall(cueBall,velocityX,velocityY);
-            velocityX=friction*velocityX;
-            velocityY=friction*velocityY;
         }
     }
 }
