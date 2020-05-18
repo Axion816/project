@@ -16,6 +16,6 @@ public class Driver{
         Rectangle powerBar = new Rectangle(500.00,850.00,500.00,50.00,"RED");
         arena.addRectangle(powerBar);
         Line headSpot = new Line(500.00,250.00,500.00,750.00,1.00,"WHITE",3);
-        arena.addLine(headspot);
+        arena.addLine(headSpot);
     }
 }
