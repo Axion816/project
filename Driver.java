@@ -20,8 +20,8 @@ public class Driver{
         Line headSpot = new Line(500.00,251.99,500.00,748.99,5.00,"WHITE",3);
         arena.addLine(headSpot);
         //Movement
-        double velocityX = 5.00;
-        double velocityY = 5.00;
+        double velocityX = 1.00;
+        double velocityY = 1.00;
         BallMovement cueB = new BallMovement();
         while(true){
             arena.pause();
