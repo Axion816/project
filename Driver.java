@@ -25,20 +25,6 @@ public class Driver{
         BallMovement cueB = new BallMovement();
         while(true){
             arena.pause();
-            /*cueBall.move(velocityX,velocityY);
-            //Conditions
-            if(cueBall.getXPosition()>=1239.00){
-                velocityX = -1.00*velocityX;
-            }
-            if(cueBall.getXPosition()<=261.00){
-                velocityX = -1.00*velocityX;
-            }
-            if(cueBall.getYPosition()>=739.00){
-                velocityY = -1.00*velocityY;
-            }
-            if(cueBall.getYPosition()<=261.00){
-                velocityY = -1.00*velocityY;
-            }*/
             cueB.moveCueBall(cueBall);
         }
     }
