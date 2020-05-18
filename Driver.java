@@ -21,7 +21,7 @@ public class Driver{
         arena.addLine(headSpot);
         //Movement
         double velocityX = 1.00;
-        double velocityY = 1.00;
+        double velocityY = 2.00;
         BallMovement cueB = new BallMovement();
         while(true){
             arena.pause();
