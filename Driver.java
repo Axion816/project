@@ -23,7 +23,7 @@ public class Driver{
         double velocityX = 1.00;
         double velocityY = 2.00;
         while(true){
-            //arena.pause();
+            arena.pause();
             /*cueBall.move(velocityX,velocityY);
             //Conditions
             if(cueBall.getXPosition()>=1239.00){
@@ -39,7 +39,7 @@ public class Driver{
                 velocityY = -1.00*velocityY;
             }*/
             BallMovement cueB = new BallMovement();
-            cueB.moveCueBall(cueBall,arena);
+            cueB.moveCueBall(cueBall);
         }
     }
 }
