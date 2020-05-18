@@ -7,6 +7,8 @@ public class Driver{
         //Title
         Text title = new Text("Welcome to Cool Pool!",14,20.00,20.00,"WHITE");
         arena.addText(title);
-
+        //Pool Table
+        Rectangle felt = new Rectangle(100.00,100.00,400.00,200.00,"GREEN");
+        arena.addRectangle(felt);
     }
 }
