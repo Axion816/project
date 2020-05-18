@@ -12,7 +12,7 @@ public class BallMovement{
             if(b.getXPosition()<=261.00){
                 velocityX = -1.00*velocityX;
             }
-            if(b.getYPosition()>=739.00){
+            if(b.getYPosition()>=/*739.00*/700){
                 velocityY = -1.00*velocityY;
             }
             if(b.getYPosition()<=261.00){
