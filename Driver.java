@@ -21,6 +21,7 @@ public class Driver{
         double speedX = 0.10;
         double speedY = 0.00;
         while(true){
+            arena.pause();
             cueBall.move(speedX,0.00);
         }
     
