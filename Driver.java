@@ -18,11 +18,12 @@ public class Driver{
         Line headSpot = new Line(500.00,251.99,500.00,748.99,5.00,"WHITE",3);
         arena.addLine(headSpot);
         //Movement
-        double speedX = 0.10;
+        double speedX = 5.00;
         double speedY = 0.00;
         while(true){
             double currentX = cueBall.getXPosition();
             double currentY = cueBall.getYPosition();
+            arena.pause();
             cueBall.setXPosition(currentX+speedX);
             //cueBall.move(speedX,0.00);
             
