@@ -25,7 +25,7 @@ public class Driver{
         BallMovement cueB = new BallMovement();
         while(true){
             arena.pause();
-            cueB.moveCueBall(cueBall,velocityX,velocityY);
+            cueB.moveCueBall(cueBall);
         }
     }
 }

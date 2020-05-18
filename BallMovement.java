@@ -1,21 +1,22 @@
 public class BallMovement{
     //Movement
-    private double friction = 0.80;
+    private double velocityX = 1.00;
+    private double velocityY = 2.00;
     //Table Interaction
-    public void moveCueBall(Ball b,double vx,double vy){
-            b.move(vx,vy);
+    public void moveCueBall(Ball b){
+        b.move(velocityX,velocityY);
             //Conditions
             if(b.getXPosition()>=1239.00){
-                vx = -1.00*vx;
+                velocityX = -1.00*velocityX;
             }
             if(b.getXPosition()<=261.00){
-                vx = -1.00*vx;
+                velocityX = -1.00*velocityX;
             }
             if(b.getYPosition()>=739.00){
-                vy = -1.00*vy;
+                velocityY = -1.00*velocityY;
             }
             if(b.getYPosition()<=261.00){
-                vy = -1.00*vy;
-            }    
+                velocityY = -1.00*velocityY;
+            }
     }
 }
