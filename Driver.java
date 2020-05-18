@@ -14,7 +14,7 @@ public class Driver{
         arena.addRectangle(table);
         arena.addRectangle(felt);
         //Outlay
-        Rectangle powerBar = new Rectangle(650.00,825.00,700.00,100.00,"RED");
+        Rectangle powerBar = new Rectangle(500.00,850.00,500.00,50.00,"RED");
         arena.addRectangle(powerBar);
     }
 }
