@@ -2,7 +2,7 @@ public class Driver{
     public static void main(String[] Args){
         GameArena arena = new GameArena(1500,1000);
         //Balls
-        Ball cueBall = new Ball(50.00,50.00,22.00,"WHITE");
+        Ball cueBall = new Ball(500.00,750.00,22.00,"WHITE");
         arena.addBall(cueBall);
         //Text Title
         Text title = new Text("Welcome to Cool Pool!",14,20.00,20.00,"WHITE");
