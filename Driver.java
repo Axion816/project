@@ -5,7 +5,7 @@ public class Driver{
         Ball a = new Ball(50.00,50.00,10.00,"RED");
         arena.addBall(a);
         //Title
-        Text title = new Text(100,100,0,"Welcome To Cool Pool!","WHITE");
+        Text title = new Text(100.00,100.00,0,"Welcome To Cool Pool!","WHITE");
         arena.addText(title);
 
     }
