@@ -18,6 +18,6 @@ public class BallMovement{
             if(b.getYPosition()<=261.00){
                 velocityY = -1.00*velocityY;
             }
-            b.move(velocityX,velocityY);
+            b.move(velocityX*friction,velocityY*friction);
     }
 }
