@@ -23,7 +23,6 @@ public class Driver{
         while(true){
             double currentX = cueBall.getXPosition();
             double currentY = cueBall.getYPosition();
-            arena.pause();
             cueBall.setXPosition(currentX+speedX);
             //cueBall.move(speedX,0.00);
             
