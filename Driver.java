@@ -22,6 +22,7 @@ public class Driver{
         //Movement
         double velocityX = 1.00;
         double velocityY = 2.00;
+        BallMovement cueB = new BallMovement();
         while(true){
             arena.pause();
             /*cueBall.move(velocityX,velocityY);
@@ -38,7 +39,6 @@ public class Driver{
             if(cueBall.getYPosition()<=261.00){
                 velocityY = -1.00*velocityY;
             }*/
-            BallMovement cueB = new BallMovement();
             cueB.moveCueBall(cueBall);
         }
     }
