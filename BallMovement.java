@@ -19,6 +19,6 @@ public class BallMovement{
                 velocityY = -1.00*velocityY;
             }
             //Move
-            b.move(velocityX*friction,velocityY*friction);
+            b.move(velocityX,velocityY);
     }
 }
