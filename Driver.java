@@ -11,6 +11,7 @@ public class Driver{
         Rectangle table = new Rectangle(165.00,165.00,1170.00,670.00,"GREY",1);
         Rectangle felt = new Rectangle(250.00,250.00,1000.00,500.00,"GREEN",2);
         Ball pot = new Ball(250.00,250.00,30.00,"BLACK",5);
+        arena.addBall(pot);
         arena.addRectangle(table);
         arena.addRectangle(felt);
         //Outlay
