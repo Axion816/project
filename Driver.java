@@ -26,7 +26,7 @@ public class Driver{
         double friction = 0.95;
         while(true){
             //arena.pause();
-            cueB.moveCueBall(cueBall,velocityX,velocityY);
+            cueB.moveCueBall(cueBall,velocityX,velocityY,arena);
             /*velocityX=friction*velocityX;
             velocityY=friction*velocityY;*/
         }
