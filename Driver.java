@@ -21,11 +21,8 @@ public class Driver{
         double speedX = 0.10;
         double speedY = 0.00;
         while(true){
-            changeX();
+            cueBall.move(speedX,0.00);
         }
     
-    }
-    public void changeX(){
-        cueBall.move(speedX,0.00);
     }
 }
