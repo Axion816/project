@@ -21,8 +21,12 @@ public class Driver{
         double speedX = 0.10;
         double speedY = 0.00;
         while(true){
+            double currentX = cueBall.getXPosition();
+            double currentY = cueBall.getYPosition();
             arena.pause();
-            cueBall.move(speedX,0.00);
+            cueBall.setXPosition(currentX+speedX);
+            //cueBall.move(speedX,0.00);
+            
         }
     
     }
