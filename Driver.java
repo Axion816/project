@@ -7,11 +7,22 @@ public class Driver{
         //Text Title
         Text title = new Text("Welcome to Cool Pool!",14,20.00,20.00,"WHITE");
         arena.addText(title);
+
+
         //Pool Table
         Rectangle table = new Rectangle(165.00,165.00,1170.00,670.00,"GREY",1);
         Rectangle felt = new Rectangle(250.00,250.00,1000.00,500.00,"GREEN",2);
-        Ball pot = new Ball(250.00,250.00,49.00,"BLACK",5);
-        arena.addBall(pot);
+        //Ball Pots
+        Ball[] pot = new Ball[6];
+        for(int i=0;i++;i<6){
+            if(i<3){
+                pot[i] = new Ball(i*250.00,250.00,49.00,"BLACK",5);
+            }
+            if(i>=3){
+                pot[i] = new Ball((i-2)*250.00,750.00,49.00,"BLACK",5);
+            }
+            arena.addBall(pot[i]);
+        }
         arena.addRectangle(table);
         arena.addRectangle(felt);
         //Outlay
@@ -19,6 +30,8 @@ public class Driver{
         arena.addRectangle(powerBar);
         Line headSpot = new Line(500.00,251.99,500.00,748.99,5.00,"WHITE",3);
         arena.addLine(headSpot);
+
+
         //Movement
         double velocityX = 1.00;
         double velocityY = 2.00;
