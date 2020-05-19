@@ -11,6 +11,7 @@ public class Driver{
             arena.pause();
             cB.moveBall(cueBall,initial.getPots());
             cB.collisionCheck(cueBall,initial.getBalls());
+            cB.potCheck(cueBall,initial.getPots());
         }
     }
 }

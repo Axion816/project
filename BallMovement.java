@@ -21,23 +21,25 @@ public class BallMovement{
         if(c.getYPosition()<=261.00){
             velocityY = -1.00*velocityY;
         }
-        for(int j=0;j<6;j++){
-            Ball tempPot = p[j];
-            if(c.collides(tempPot)==true){
-                c.setXPosition(650.00);
-                c.setYPosition(500.00);
-                velocityX = 0.00;
-                velocityY = 0.00;
-            }
-        }
     }
     public void collisionCheck(Ball c, Ball[] b){
         for(int i=0;i<15;i++){
             Ball tempBall = b[i];
             if(c.collides(tempBall)==true){
-                velocityX = -1.00*velocityX;
-                velocityY = -1.00*velocityY;
+                velocityX = velocityX + tempBall.getVelocityX();
+                velocityY = -1.00*velocityY + tempBall.getVelocityY();
             } 
+        }
+    }
+    public void potCheck(Ball b, Ball[] p){
+        for(int j=0;j<6;j++){
+            Ball tempPot = p[j];
+            if(b.collides(tempPot)==true){
+                b.setXPosition(650.00);
+                b.setYPosition(500.00);
+                velocityX = 0.00;
+                velocityY = 0.00;
+            }
         }
     }
 }
