@@ -31,7 +31,7 @@ public class Layout{
         Line headSpot = new Line(650.00,251.99,650.00,748.99,5.00,"WHITE",3);
         arena.addLine(headSpot);
     }
-    public Ball getBall(Ball b){
-        return b;
+    public Ball getcueBall(){
+        return cueBall;
     }
 }
