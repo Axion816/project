@@ -14,7 +14,7 @@ public class Driver{
         Rectangle felt = new Rectangle(250.00,250.00,1000.00,500.00,"GREEN",2);
         //Ball Pots
         Ball[] pot = new Ball[6];
-        for(int i=0;i++;i<6){
+        for(int i=0;i<6;i++){
             if(i<3){
                 pot[i] = new Ball(i*250.00,250.00,49.00,"BLACK",5);
             }
