@@ -4,14 +4,13 @@ public class Driver{
         Layout initial = new Layout(arena);
 
         //Movement
-        double velocityX = 1.00;
-        double velocityY = 2.00;
-        BallMovement cueB = new BallMovement();
-        Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",4);
+        BallMovement play = new BallMovement();
+        Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",5);
         arena.addBall(cueBall);
         while(true){
             arena.pause();
-            cueB.moveCueBall(cueBall);
+            play.moveCueBall(cueBall,initial.getPots());
+            play.collisionCheck(cueBall,initial.getBalls());
         }
     }
 }
