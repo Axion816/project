@@ -1,7 +1,5 @@
 public class Layout{
     public Layout(GameArena arena){
-        Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",4);
-        arena.addBall(cueBall);
         //Text Title
         Text title = new Text("Welcome to Cool Pool!",14,20.00,20.00,"WHITE");
         arena.addText(title);
@@ -21,17 +19,32 @@ public class Layout{
         }
         //Game Balls
         Ball[] solid = new Ball[14];
-        Ball eightBall = new Ball(11940.00,500.00,22.00,"BLACK",4);
+        solid[0] = new Ball(1150.00,500.00,22,"BLUE",4);
+        solid[1] = new Ball(1172.00,511.00,22,"ORANGE",4);
+        solid[2] = new Ball(1172.00,489.00,22,"ORANGE",4);
+        solid[3] = new Ball(1194.00,522.00,22,"BLUE",4);
+        solid[4] = new Ball(1194.00,478.00,22,"BLUE",4);
+        solid[5] = new Ball(1216.00,533.00,22,"ORANGE",4);
+        solid[6] = new Ball(1216.00,511.00,22,"BLUE",4);
+        solid[7] = new Ball(1216.00,489.00,22,"ORANGE",4);
+        solid[8] = new Ball(1216.00,467.00,22,"ORANGE",4);
+        solid[9] = new Ball(1238.00,544.00,22,"BLUE",4);
+        solid[10] = new Ball(1238.00,522.00,22,"BLUE",4);
+        solid[11] = new Ball(1238.00,500.00,22,"ORANGE",4);
+        solid[12] = new Ball(1238.00,478.00,22,"BLUE",4);
+        solid[13] = new Ball(1238.00,456.00,22,"ORANGE",4);
+        for(int j=0;j<14;j++){
+            arena.addBall(solid[j]);
+        }
+
+        Ball eightBall = new Ball(1194.00,500.00,22.00,"BLACK",4);
         arena.addBall(eightBall);
         arena.addRectangle(table);
         arena.addRectangle(felt);
         //Outlay
-        Rectangle powerBar = new Rectangle(650.00,850.00,500.00,50.00,"RED");
+        Rectangle powerBar = new Rectangle(650.00,850.00,500.00,30.00,"RED");
         arena.addRectangle(powerBar);
         Line headSpot = new Line(650.00,251.99,650.00,748.99,5.00,"WHITE",3);
         arena.addLine(headSpot);
-    }
-    public Ball getcueBall(){
-        return cueBall;
     }
 }

@@ -1,7 +1,7 @@
 public class BallMovement{
     //Movement
-    private double velocityX = 1.00;
-    private double velocityY = 2.00;
+    private double velocityX = 5.00;
+    private double velocityY = 5.00;
     //Table Interaction
     public void moveCueBall(Ball b){
         b.move(velocityX,velocityY);
