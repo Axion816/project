@@ -6,7 +6,7 @@ public class BallMovement{
         this.velocityY = a.getVelocityY();
     }
     //Table Interaction
-    public void moveBall(Ball c,Ball[] p){
+    public void moveBall(Ball c){
         c.move(velocityX,velocityY);
         //Conditions
         if(c.getXPosition()>=1389.00){
@@ -27,10 +27,11 @@ public class BallMovement{
             Ball tempBall = b[i];
             if(c.collides(tempBall)==true){
                 velocityX = velocityX + tempBall.getVelocityX();
-                velocityY = -1.00*velocityY + tempBall.getVelocityY();
+                velocityY = tempBall.getVelocityY() - velocityY;
             } 
         }
     }
+
     public void potCheck(Ball b, Ball[] p){
         for(int j=0;j<6;j++){
             Ball tempPot = p[j];

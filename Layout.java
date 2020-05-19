@@ -8,7 +8,7 @@ public class Layout{
     Rectangle felt = new Rectangle(400.00,250.00,1000.00,500.00,"GREEN",2);
     //Game Balls
     Ball[] solid = new Ball[15];
-
+    BallMovement[] ballMovement = new BallMovement[15];
     public Layout(GameArena arena){
         arena.addRectangle(powerBar);
         arena.addLine(headSpot);
@@ -31,8 +31,8 @@ public class Layout{
         solid[4] = new Ball(1194.00,478.00,22,"BLUE",5);
         solid[5] = new Ball(1216.00,533.00,22,"ORANGE",5);
         solid[6] = new Ball(1216.00,511.00,22,"BLUE",5);
-        solid[7] = new Ball(1216.00,489.00,22,"ORANGE",5);
-        solid[8] = new Ball(1194.00,500.00,22.00,"BLACK",5);
+        solid[7] = new Ball(1194.00,500.00,22.00,"BLACK",5);
+        solid[8] = new Ball(1216.00,489.00,22,"ORANGE",5);
         solid[9] = new Ball(1216.00,467.00,22,"ORANGE",5);
         solid[10] = new Ball(1238.00,544.00,22,"BLUE",5);
         solid[11] = new Ball(1238.00,522.00,22,"BLUE",5);
@@ -41,6 +41,8 @@ public class Layout{
         solid[14] = new Ball(1238.00,456.00,22,"ORANGE",5);
         for(int j=0;j<15;j++){
             arena.addBall(solid[j]);
+            Ball tempBall = solid[j];
+            ballMovement[j] = new BallMovement(tempBall);
         }
     }
     public Ball[] getPots(){
@@ -48,5 +50,8 @@ public class Layout{
     }
     public Ball[] getBalls(){
         return solid;
+    }
+    public BallMovement[] getMovementArray(){
+        return ballMovement;
     }
 }
