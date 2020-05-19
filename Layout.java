@@ -21,7 +21,6 @@ public class Layout{
         }
         //Game Balls
         Ball[] solid = new Ball[14];
-        solid[j] = new Ball();
         Ball eightBall = new Ball(11940.00,500.00,22.00,"BLACK",4);
         arena.addBall(eightBall);
         arena.addRectangle(table);

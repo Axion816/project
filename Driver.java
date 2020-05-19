@@ -2,6 +2,7 @@ public class Driver{
     public static void main(String[] Args){
         GameArena arena = new GameArena(1800,1000);
         Layout initial = new Layout(arena);
+        Ball cueBall = new cueBall();
         Ball cueBall = initial.getBall(cueBall);
         /*
         //Balls
