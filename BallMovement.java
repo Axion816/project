@@ -1,9 +1,12 @@
 public class BallMovement{
-    //Movement
-    private double velocityX = 2.00;
-    private double velocityY = 3.00;
+    private double velocityX;
+    private double velocityY;
+    public BallMovement(Ball a){
+        double velocityX = a.getVelocityX();
+        double velocityY = a.getVelocityY();
+    }
     //Table Interaction
-    public void moveCueBall(Ball c,Ball[] p){
+    public void moveBall(Ball c,Ball[] p){
         c.move(velocityX,velocityY);
         //Conditions
         if(c.getXPosition()>=1389.00){

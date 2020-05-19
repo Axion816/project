@@ -15,6 +15,8 @@ public class Ball
 	private double size;				// The diameter of this Ball
 	private int layer;					// The layer of this ball is on.
 	private String colour;				// The colour of this Ball
+	private double velocityX;			// Velocity of the Ball in X axis.
+	private double velocityY;      		// Velocity of the Ball in Y axis.
 
 										// Permissable colours are:
 										// BLACK, BLUE, CYAN, DARKGREY, GREY,
@@ -35,6 +37,8 @@ public class Ball
 		this.size = diameter;
 		this.colour = col;
 		this.layer = 0;
+		this.velocityX = 0;				//Default velocity
+		this.velocityY =0;				//Default Velocity
 	}	
 
 	/**
@@ -52,7 +56,31 @@ public class Ball
 		this.size = diameter;
 		this.colour = col;
 		this.layer = layer;
+		this.velocityX = 0;				//Default Velocity
+		this.velocityY = 0;				//Default velocity
 	}	
+
+	/*
+	 Changes the velocity in x and y of the ball
+	*/
+	public void setVelocity(double vX, double vY){
+		velocityX=vX;
+		velocityY=vY;
+	}
+
+	/*
+	Returns the velocity in the x axis
+	*/
+	public double getVelocityX(){
+		return velocityX;
+	}
+
+	/*
+	Returns the velocity in the y axis
+	*/
+	public double getVelocityY(){
+		return velocityY;
+	}
 
 	/**
 	 * Obtains the current position of this Ball.
