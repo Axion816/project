@@ -10,7 +10,7 @@ public class Driver{
 
 
         //Pool Table
-        Rectangle table = new Rectangle(165.00,165.00,1170.00,670.00,"GREY",1);
+        Rectangle table = new Rectangle(315.00,165.00,1170.00,670.00,"GREY",1);
         Rectangle felt = new Rectangle(400.00,250.00,1000.00,500.00,"GREEN",2);
         //Ball Pots
         Ball[] pot = new Ball[6];
@@ -28,7 +28,7 @@ public class Driver{
         //Outlay
         Rectangle powerBar = new Rectangle(650.00,850.00,500.00,50.00,"RED");
         arena.addRectangle(powerBar);
-        Line headSpot = new Line(650.00,251.99,500.00,748.99,5.00,"WHITE",3);
+        Line headSpot = new Line(650.00,251.99,650.00,748.99,5.00,"WHITE",3);
         arena.addLine(headSpot);
 
 
