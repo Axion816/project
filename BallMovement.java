@@ -2,8 +2,8 @@ public class BallMovement{
     private double velocityX;
     private double velocityY;
     public BallMovement(Ball a){
-        double velocityX = a.getVelocityX();
-        double velocityY = a.getVelocityY();
+        this.velocityX = a.getVelocityX();
+        this.velocityY = a.getVelocityY();
     }
     //Table Interaction
     public void moveBall(Ball c,Ball[] p){

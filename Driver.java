@@ -4,9 +4,8 @@ public class Driver{
         Layout initial = new Layout(arena);
 
         //Movement
-        Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",5);
+        Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",5,2.00,3.00);
         BallMovement cB = new BallMovement(cueBall);
-        cueBall.setVelocity(4.00,3.00);
         arena.addBall(cueBall);
         while(true){
             arena.pause();

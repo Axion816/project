@@ -29,14 +29,15 @@ public class Ball
 	 * @param y The y co-ordinate of centre of the Ball (in pixels)
 	 * @param diameter The diameter of the Ball (in pixels)
 	 * @param col The colour of the Ball (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
+	 * @param layer The layer this ball is to be drawn on. Objects with a higher layer number are always drawn on top of those with lower layer numbers.
 	 */
-	public Ball(double x, double y, double diameter, String col)
+	public Ball(double x, double y, double diameter, String col, int layer)
 	{
 		this.xPosition = x;
 		this.yPosition = y;
 		this.size = diameter;
 		this.colour = col;
-		this.layer = 0;
+		this.layer = layer;
 		this.velocityX = 0;				//Default velocity
 		this.velocityY =0;				//Default Velocity
 	}	
@@ -48,16 +49,18 @@ public class Ball
 	 * @param diameter The diameter of the Ball (in pixels)
 	 * @param col The colour of the Ball (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
 	 * @param layer The layer this ball is to be drawn on. Objects with a higher layer number are always drawn on top of those with lower layer numbers.
+	 * @param vX The velocity in the X axis.
+	 * @param vY The velocity in the Y axis.
 	 */
-	public Ball(double x, double y, double diameter, String col, int layer)
+	public Ball(double x, double y, double diameter, String col, int layer, double vX, double vY)
 	{
 		this.xPosition = x;
 		this.yPosition = y;
 		this.size = diameter;
 		this.colour = col;
 		this.layer = layer;
-		this.velocityX = 0;				//Default Velocity
-		this.velocityY = 0;				//Default velocity
+		this.velocityX = vX;				//Set Velocity
+		this.velocityY = vY;				//Set Velocity
 	}	
 
 	/*

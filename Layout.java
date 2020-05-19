@@ -1,9 +1,9 @@
 public class Layout{
     //Table and Outlay variables
     Ball[] pot = new Ball[6];
-    Text title = new Text("Welcome to Cool Pool!",14,20.00,20.00,"WHITE");
+    Text title = new Text("Welcome to Cool Pool!",14,20.00,20.00,"WHITE",0);
     Line headSpot = new Line(650.00,251.99,650.00,748.99,5.00,"WHITE",3);
-    Rectangle powerBar = new Rectangle(650.00,850.00,500.00,30.00,"RED");  
+    Rectangle powerBar = new Rectangle(650.00,850.00,500.00,30.00,"RED",0);  
     Rectangle table = new Rectangle(315.00,165.00,1170.00,670.00,"GREY",1);
     Rectangle felt = new Rectangle(400.00,250.00,1000.00,500.00,"GREEN",2);
     //Game Balls
