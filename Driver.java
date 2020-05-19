@@ -19,7 +19,7 @@ public class Driver{
                 pot[i] = new Ball(250.00+(i*500.00),250.00,49.00,"BLACK",5);
             }
             if(i>=3){
-                pot[i] = new Ball(((i-2)*(500.00))+250.00,750.00,49.00,"BLACK",5);
+                pot[i] = new Ball(((i-3)*(500.00))+250.00,750.00,49.00,"BLACK",5);
             }
             arena.addBall(pot[i]);
         }
