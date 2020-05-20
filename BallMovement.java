@@ -42,6 +42,7 @@ public class BallMovement{
         else{
             c.move(velocityX,velocityY);
         }
+        c.setVelocity(velocityX,velocityY);
     }
     public void collisionCheck(Ball c, Ball[] b){
         for(int i=0;i<15;i++){
