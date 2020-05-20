@@ -7,11 +7,16 @@ public class BallMovement{
     private double diffY;
     private Ball ball;
     private BallMovement[] balls;
+    private double newV;
 
     public BallMovement(Ball b){
         double xVelocity = 0;
         double yVelocity = 0;
         ball = b;
+    }
+    
+    public Ball getBall(){
+        return ball;
     }
 
     public double getXVelocity(){
@@ -101,11 +106,39 @@ public class BallMovement{
     }
 
     public void collisionCheckCueBall(BallMovement[] balls){
-        
+        for(int i=0; i<15; i++){
+            BallMovement temp = balls[i];
+            if(ball.collides(temp.getBall()) == true){
+                newV = 0.90*xVelocity;
+                temp.setXVelocity(newV);
+                newV = 0.90*yVelocity;
+                temp.setYVelocity(newV);
+                xVelocity = 0.00;
+                yVelocity = 0.00;
+            }
+        }
     }
 
-    public void collisionCheck(BallMovement[] exclusiveBalls){
-
+    public void collisionCheck(BallMovement[] exclusiveBalls, BallMovement cueBall){
+        for(int i=0; i<14;i++){
+            BallMovement temp = exclusiveBalls[i];
+            if(ball.collides(temp.getBall()) == true){
+                newV = 0.90*xVelocity;
+                temp.setXVelocity(newV);
+                newV = 0.90*yVelocity;
+                temp.setYVelocity(newV);
+                xVelocity = 0.00;
+                yVelocity = 0.00;
+            }
+            else if(ball.collides(cueBall.getBall()) == true){
+                newV = 0.90*xVelocity;
+                cueBall.setXVelocity(newV);
+                newV = 0.90*yVelocity;
+                cueBall.setYVelocity(newV);
+                xVelocity = 0.00;
+                yVelocity = 0.00;
+            }
+        }
     }
 
 

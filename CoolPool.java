@@ -21,7 +21,7 @@ public class CoolPool{
             for(int i=0;i<15;i++){
                 exclusiveBalls = initial.getExclusiveBalls(i);
                 BallMovement tempMovement = movementName[i];
-                tempMovement.collisionCheck(exclusiveBalls);
+                tempMovement.collisionCheck(exclusiveBalls,cB);
                 tempMovement.potCheck(initial.getPots());
                 tempMovement.moveBall();
             }
