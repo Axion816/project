@@ -1,28 +1,46 @@
 public class BallMovement{
     private double velocityX;
     private double velocityY;
+    private double XPosition;
+    private double YPosition;
+    private double diffX;
+    private double diffY;
     public BallMovement(Ball a){
         this.velocityX = a.getVelocityX();
         this.velocityY = a.getVelocityY();
     }
     public void updateVelocity(Ball a){
-        this.velocityX = a.getVelocityX();
-        this.velocityY = a.getVelocityY();
+        velocityX = 0.99*velocityX;
+        velocityY = 0.99*velocityY;
     }
     //Table Interaction
     public void moveBall(Ball c){
-        c.move(velocityX,velocityY);
-        if(c.getXPosition()>=1389.00){
-            velocityX = -1.00*velocityX;
+        if(c.getXPosition() + velocityX >=1389.00){
+            diffX = 1389.00 - c.getXPosition();
+            c.move(diffX,velocityY);
+            double newV = -1.00*velocityX;
+            velocityX=-1.00*velocityX;
         }
-        if(c.getXPosition()<=411.00){
-            velocityX = -1.00*velocityX;
+        else if(c.getXPosition() + velocityX <=411.00){
+            diffX = 411.00 - c.getXPosition();
+            c.move(diffX,velocityY);
+            double newV = -1.00*velocityX;
+            velocityX=-1.00*velocityX;
         }
-        if(c.getYPosition()>=739.00){
-            velocityY = -1.00*velocityY;
+        else if(c.getYPosition() + velocityY >=739.00){
+            diffY = 739.00 - c.getYPosition();
+            c.move(velocityX,diffY);
+            double newV = -1.00*velocityY;
+            velocityY=-1.00*velocityY;
         }
-        if(c.getYPosition()<=261.00){
-            velocityY = -1.00*velocityY;
+        else if(c.getYPosition() + velocityY<=261.00){
+            diffY = 261.00 - c.getYPosition();
+            c.move(velocityX,diffY);
+            double newV = -1.00*velocityY;
+            velocityY=-1.00*velocityY;
+        }
+        else{
+            c.move(velocityX,velocityY);
         }
     }
     public void collisionCheck(Ball c, Ball[] b){
