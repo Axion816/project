@@ -4,11 +4,15 @@ public class Driver{
         Layout initial = new Layout(arena);
 
         //Movement
-        Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",5,10.00,5.00);
+        Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",5);
         BallMovement cB = new BallMovement(cueBall);
         arena.addBall(cueBall);
         BallMovement[] movementName = initial.getMovementArray();
         Ball[] balls = initial.getBalls();
+        PoolCue cue = new PoolCue();
+        cue.changePower(arena,cueBall);
+
+    
 
         while(true){
             arena.pause();
