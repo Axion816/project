@@ -68,9 +68,8 @@ public class BallMovement{
             yVelocity = -1.00*yVelocity;
         }
 
-        else{
-            ball.move(xVelocity,yVelocity);
-        }
+        ball.move(xVelocity,yVelocity);
+        
 
     }
 

@@ -29,8 +29,8 @@ public class PoolCue{
             if(a.downPressed()==true){
                 powerY = powerY + 0.10;
             }
-            double xVelocity = power*10.00;
-            double yVelocity = powerY*10.00;
+            double xVelocity = power*20.00;
+            double yVelocity = powerY*20.00;
             cueBall.setYVelocity(yVelocity);
             cueBall.setXVelocity(xVelocity);
             if(a.spacePressed()==true){

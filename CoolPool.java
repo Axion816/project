@@ -23,7 +23,7 @@ public class CoolPool{
                 //exclusiveBalls = initial.getExclusiveBalls(i);
                 BallMovement tempMovement = movementName[i];
                 //tempMovement.collisionCheck(exclusiveBalls,cB);
-                //tempMovement.potCheck(initial.getPots());
+                tempMovement.potCheck(initial.getPots());
                 tempMovement.moveBall();
             }
             if(arena.escPressed()==true){
