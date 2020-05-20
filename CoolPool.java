@@ -18,12 +18,16 @@ public class CoolPool{
             cB.collisionCheckCueBall(movementName);
             cB.potCheck(initial.getPots());
             cB.moveBall();
+            
             for(int i=0;i<15;i++){
-                exclusiveBalls = initial.getExclusiveBalls(i);
+                //exclusiveBalls = initial.getExclusiveBalls(i);
                 BallMovement tempMovement = movementName[i];
-                tempMovement.collisionCheck(exclusiveBalls,cB);
-                tempMovement.potCheck(initial.getPots());
+                //tempMovement.collisionCheck(exclusiveBalls,cB);
+                //tempMovement.potCheck(initial.getPots());
                 tempMovement.moveBall();
+            }
+            if(arena.escPressed()==true){
+                arena.exit();
             }
         }
     }

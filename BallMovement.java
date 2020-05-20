@@ -7,7 +7,6 @@ public class BallMovement{
     private double diffY;
     private Ball ball;
     private BallMovement[] balls;
-    private double newV;
 
     public BallMovement(Ball b){
         double xVelocity = 0;
@@ -38,7 +37,7 @@ public class BallMovement{
     public void moveBall(){
         xVelocity = 0.99*xVelocity;
         yVelocity = 0.99*yVelocity;
-        if(xVelocity <= 0.25 && yVelocity <= 0.25){
+        if(xVelocity <= 0.10 && yVelocity <= 0.10){
             xVelocity = 0.00;
             yVelocity = 0.00;
         }
@@ -108,38 +107,33 @@ public class BallMovement{
     public void collisionCheckCueBall(BallMovement[] balls){
         for(int i=0; i<15; i++){
             BallMovement temp = balls[i];
-            if(ball.collides(temp.getBall()) == true){
-                newV = 0.90*xVelocity;
-                temp.setXVelocity(newV);
-                newV = 0.90*yVelocity;
-                temp.setYVelocity(newV);
+            if(ball.collides(temp.getBall()) ==  true){
+                temp.setXVelocity(xVelocity);
+                temp.setYVelocity(yVelocity);
                 xVelocity = 0.00;
                 yVelocity = 0.00;
             }
         }
     }
-
+    /*
     public void collisionCheck(BallMovement[] exclusiveBalls, BallMovement cueBall){
         for(int i=0; i<14;i++){
             BallMovement temp = exclusiveBalls[i];
             if(ball.collides(temp.getBall()) == true){
-                newV = 0.90*xVelocity;
-                temp.setXVelocity(newV);
-                newV = 0.90*yVelocity;
-                temp.setYVelocity(newV);
+                temp.setXVelocity(xVelocity);
+                temp.setYVelocity(yVelocity);
                 xVelocity = 0.00;
                 yVelocity = 0.00;
             }
             else if(ball.collides(cueBall.getBall()) == true){
-                newV = 0.90*xVelocity;
-                cueBall.setXVelocity(newV);
-                newV = 0.90*yVelocity;
-                cueBall.setYVelocity(newV);
+                cueBall.setXVelocity(xVelocity);
+                cueBall.setYVelocity(yVelocity);
                 xVelocity = 0.00;
                 yVelocity = 0.00;
             }
         }
     }
+    */
 
 
 }
