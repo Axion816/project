@@ -9,6 +9,7 @@ public class Layout{
     //Game Balls
     Ball[] solid = new Ball[15];
     BallMovement[] ballMovement = new BallMovement[15];
+    BallMovement[] exclusiveBalls = new BallMovement[14];
     public Layout(GameArena arena){
         arena.addRectangle(powerBar);
         arena.addLine(headSpot);
@@ -53,5 +54,14 @@ public class Layout{
     }
     public BallMovement[] getMovementArray(){
         return ballMovement;
+    }
+
+    public BallMovement[] getExclusiveBalls(int i){
+        BallMovement[] temp = ballMovement;
+        temp[i]=temp[14];
+        for(int j=0;j<14;j++){
+            exclusiveBalls[j] = temp[j];
+        }
+        return exclusiveBalls;
     }
 }
