@@ -33,36 +33,31 @@ public class BallMovement{
     public void setYVelocity(double xY){
         yVelocity = xY;
     }
-
     public void moveBall(){
         xVelocity = 0.99*xVelocity;
         yVelocity = 0.99*yVelocity;
-        if(xVelocity <= 0.10 && yVelocity <= 0.10){
-            xVelocity = 0.00;
-            yVelocity = 0.00;
-        }
         xPosition = ball.getXPosition();
         yPosition = ball.getYPosition();
 
-        if(xPosition + xVelocity >= 1389.00){
+        if(xPosition + xVelocity >= 1389.00 && xVelocity > 0){
             diffX = 1389.00 - xPosition;
             ball.move(diffX,yVelocity);
             xVelocity = -1.00*xVelocity;
         }
 
-        else if(xPosition + xVelocity <= 411.00){
+        else if(xPosition + xVelocity <= 411.00 && xVelocity < 0){
             diffX = 411.00 - xPosition;
             ball.move(diffX,yVelocity);
             xVelocity = -1.00*xVelocity;
         }
 
-        else if(yPosition + yVelocity >= 739.00){
+        else if(yPosition + yVelocity >= 739.00 && yVelocity > 0){
             diffY = 739.00 - yPosition;
             ball.move(xVelocity,diffY);
             yVelocity = -1.00*yVelocity;
         }
 
-        else if(yPosition + yVelocity <= 261.00){
+        else if(yPosition + yVelocity <= 261.00 && yVelocity < 0){
             diffY = 261.00 - yPosition;
             ball.move(xVelocity,diffY);
             yVelocity = -1.00*yVelocity;
@@ -114,7 +109,7 @@ public class BallMovement{
             }
         }
     }
-    /*
+    
     public void collisionCheck(BallMovement[] exclusiveBalls, BallMovement cueBall){
         for(int i=0; i<14;i++){
             BallMovement temp = exclusiveBalls[i];
@@ -132,7 +127,7 @@ public class BallMovement{
             }
         }
     }
-    */
+    
 
 
 }
