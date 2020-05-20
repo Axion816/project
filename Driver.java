@@ -4,23 +4,24 @@ public class Driver{
         Layout initial = new Layout(arena);
 
         //Movement
-        Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",5,-10.00,4.00);
+        Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",5,10.00,0.50);
         BallMovement cB = new BallMovement(cueBall);
         arena.addBall(cueBall);
         BallMovement[] movementName = initial.getMovementArray();
+        Ball[] balls = initial.getBalls();
+
         while(true){
             arena.pause();
             cB.updateVelocity(cueBall);
             cB.collisionCheck(cueBall,initial.getBalls());
             cB.potCheck(cueBall,initial.getPots());
             cB.moveBall(cueBall);
-            Ball[] b = initial.getBalls();
             for(int i=0;i<15;i++){
-                Ball tempBall = b[i];
+                Ball tempBall = balls[i];
                 BallMovement tempMovement = movementName[i];
                 tempMovement.updateVelocity(tempBall);
-                tempMovement.collisionCheck(tempBall,b);
-                tempMovement.potCheck(tempBall,b);
+                tempMovement.collisionCheck(tempBall,balls);
+                tempMovement.potCheck(tempBall,balls);
                 tempMovement.moveBall(tempBall);
             }
         }

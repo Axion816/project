@@ -10,8 +10,8 @@ public class BallMovement{
         this.velocityY = a.getVelocityY();
     }
     public void updateVelocity(Ball a){
-        velocityX = 0.99*velocityX;
-        velocityY = 0.99*velocityY;
+        velocityX = 0.99*a.getVelocityX();
+        velocityY = 0.99*a.getVelocityY();
     }
     //Table Interaction
     public void moveBall(Ball c){
@@ -47,8 +47,7 @@ public class BallMovement{
         for(int i=0;i<15;i++){
             Ball tempBall = b[i];
             if(c.collides(tempBall)==true){
-                velocityX = 0.10*(velocityX + tempBall.getVelocityX());
-                velocityY = 0.10*(velocityY + tempBall.getVelocityY());
+                c.setVelocity(0.00,0.00);
                 double tBVelocityX = velocityX + tempBall.getVelocityX();
                 double tBVelocityY = velocityY + tempBall.getVelocityY();
                 tempBall.setVelocity(tBVelocityX,tBVelocityY);
