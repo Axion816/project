@@ -5,10 +5,13 @@ public class BallMovement{
         this.velocityX = a.getVelocityX();
         this.velocityY = a.getVelocityY();
     }
+    public void updateVelocity(Ball a){
+        this.velocityX = a.getVelocityX();
+        this.velocityY = a.getVelocityY();
+    }
     //Table Interaction
     public void moveBall(Ball c){
         c.move(velocityX,velocityY);
-        //Conditions
         if(c.getXPosition()>=1389.00){
             velocityX = -1.00*velocityX;
         }
@@ -26,8 +29,11 @@ public class BallMovement{
         for(int i=0;i<15;i++){
             Ball tempBall = b[i];
             if(c.collides(tempBall)==true){
-                velocityX = velocityX + tempBall.getVelocityX();
-                velocityY = tempBall.getVelocityY() - velocityY;
+                velocityX = 0.10*(velocityX + tempBall.getVelocityX());
+                velocityY = 0.10*(velocityY + tempBall.getVelocityY());
+                double tBVelocityX = velocityX + tempBall.getVelocityX();
+                double tBVelocityY = velocityY + tempBall.getVelocityY();
+                tempBall.setVelocity(tBVelocityX,tBVelocityY);
             } 
         }
     }
@@ -36,11 +42,15 @@ public class BallMovement{
         for(int j=0;j<6;j++){
             Ball tempPot = p[j];
             if(b.collides(tempPot)==true){
-                b.setXPosition(650.00);
-                b.setYPosition(500.00);
-                velocityX = 0.00;
-                velocityY = 0.00;
+                potConditions(b);
             }
         }
+    }
+    private void potConditions(Ball b){
+        if(b.getColour()=="WHITE"){
+            b.setXPosition(650.00);
+            b.setYPosition(500.00);
+        }
+        b.setVelocity(0.00,0.00);
     }
 }

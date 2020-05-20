@@ -10,16 +10,18 @@ public class Driver{
         BallMovement[] movementName = initial.getMovementArray();
         while(true){
             arena.pause();
-            cB.moveBall(cueBall);
+            cB.updateVelocity(cueBall);
             cB.collisionCheck(cueBall,initial.getBalls());
             cB.potCheck(cueBall,initial.getPots());
+            cB.moveBall(cueBall);
             Ball[] b = initial.getBalls();
             for(int i=0;i<15;i++){
                 Ball tempBall = b[i];
                 BallMovement tempMovement = movementName[i];
-                tempMovement.moveBall(tempBall);
+                tempMovement.updateVelocity(tempBall);
                 tempMovement.collisionCheck(tempBall,b);
                 tempMovement.potCheck(tempBall,b);
+                tempMovement.moveBall(tempBall);
             }
         }
     }
