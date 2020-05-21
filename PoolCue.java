@@ -1,7 +1,7 @@
 public class PoolCue{
     private double power=0;
     private Rectangle powerDisplay;
-    private double maxVelocity = 10.00;
+    private double maxVelocity = 12.00;
     private boolean setup = true; 
     private double width=0;
     private double powerY=0;
@@ -29,8 +29,8 @@ public class PoolCue{
             if(a.downPressed()==true){
                 powerY = powerY + 0.10;
             }
-            double xVelocity = power*15.00;
-            double yVelocity = powerY*15.00;
+            double xVelocity = power*maxVelocity;
+            double yVelocity = powerY*maxVelocity;
             cueBall.setYVelocity(yVelocity);
             cueBall.setXVelocity(xVelocity);
             if(a.spacePressed()==true){
