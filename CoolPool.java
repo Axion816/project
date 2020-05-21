@@ -19,7 +19,7 @@ public class CoolPool{
             movement.moveBall(cueBall,initial.getBalls(),initial.getPots());
             for(int i=0;i<15;i++){
                 tempBall = balls[i];
-                exclusiveBalls = initial.getExclusiveBalls(tempBall);
+                exclusiveBalls = initial.getExclusiveBalls(tempBall,cueBall);
                 movement.moveBall(tempBall,exclusiveBalls,initial.getPots());
             }
             if(arena.escPressed()==true){

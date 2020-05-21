@@ -10,8 +10,14 @@ public class BallMovement{
     private int orangeCounter=0;
     private double yTemp;
     private double tempVelocity;
+    private Ball[] tempBalls = new Ball[16];
+    private boolean velocityFlag;
 
     public void moveBall(Ball ball,Ball[] balls,Ball[] pots){
+        if(ball.getXVelocity() <= 0.05 && ball.getYVelocity() <- 0.05){
+            ball.setXVelocity(0.00);
+            ball.setYVelocity(0.00);
+        }
         ball.move(ball.getXVelocity(),ball.getYVelocity());
         boundaryCheck(ball);
         potCheck(ball,pots);
@@ -72,13 +78,13 @@ public class BallMovement{
             ball.setYPosition(500.00);
         }
         else if(ball.getColour() == "BLUE"){
-            yTemp = 165.00 + blueCounter*50.00;
+            yTemp = 165.00 + blueCounter*60.00;
             ball.setXPosition(157.50);
             ball.setYPosition(yTemp);
             blueCounter++;
         }
         else if(ball.getColour() == "ORANGE"){
-            yTemp = 165.00 + orangeCounter*50.00;
+            yTemp = 165.00 + orangeCounter*60.00;
             ball.setXPosition(1642.50);
             ball.setYPosition(yTemp);
             orangeCounter++;
@@ -100,9 +106,9 @@ public class BallMovement{
             Ball temp = balls[i];
             if(ball.collides(temp) ==  true){
                 collideFlag = true;
-                tempVelocity = xVelocity + temp.getXVelocity();
+                tempVelocity = 0.90*(xVelocity + temp.getXVelocity());
                 temp.setXVelocity(tempVelocity);
-                tempVelocity = yVelocity + temp.getYVelocity();
+                tempVelocity = 0.90*(yVelocity + temp.getYVelocity());
                 temp.setYVelocity(tempVelocity);
             }
         }
@@ -118,13 +124,13 @@ public class BallMovement{
         xVelocity = ball.getXVelocity();
         yVelocity = ball.getYVelocity();
         
-        for(int i=0; i<14; i++){
+        for(int i=0; i<15; i++){
             Ball temp = balls[  i];
             if(ball.collides(temp) ==  true){
                 collideFlag = true;
-                tempVelocity = xVelocity + temp.getXVelocity();
+                tempVelocity = 0.90*(xVelocity + temp.getXVelocity());
                 temp.setXVelocity(tempVelocity);
-                tempVelocity = yVelocity + temp.getYVelocity();
+                tempVelocity = 0.90*(yVelocity + temp.getYVelocity());
                 temp.setYVelocity(tempVelocity);
             }
         }
@@ -135,9 +141,4 @@ public class BallMovement{
         }
         return;
     }
-    
-    
-    
-
-
 }

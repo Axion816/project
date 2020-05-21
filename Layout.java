@@ -10,7 +10,7 @@ public class Layout{
     int index;
     //Game Balls
     Ball[] solid = new Ball[15];
-    Ball[] exclusiveBalls = new Ball[14];
+    Ball[] exclusiveBalls = new Ball[15];
     public Layout(GameArena arena){
         arena.addRectangle(powerBar);
         arena.addLine(headSpot);
@@ -52,7 +52,7 @@ public class Layout{
         return solid;
     }
 
-    public Ball[] getExclusiveBalls(Ball ball){
+    public Ball[] getExclusiveBalls(Ball ball,Ball cueBall){
         index = 0;
         for(int j=0;j<15;j++){
             if(solid[j]==ball){
@@ -65,6 +65,7 @@ public class Layout{
                 index++;
             }
         }
+        exclusiveBalls[14]=cueBall;
         return exclusiveBalls;
     }
 }
