@@ -1,45 +1,88 @@
 public class PoolCue{
-    private double power=0;
-    private Rectangle powerDisplay;
+    private double power;
     private double maxVelocity = 12.00;
-    private boolean setup = true; 
-    private double width=0;
-    private double powerY=0;
-    public void changePower(GameArena a,Ball cueBall){
-        powerDisplay = new Rectangle(650.00,850.00,0.00,30.00,"RED",1);
-        a.addRectangle(powerDisplay);
-        while(setup == true){
-            if(a.rightPressed()==true){
-                if(power<1.00){
-                    power = power + 0.10;
-                    width = width + 50;
-                    powerDisplay.setWidth(width);
-                }
-            }
-            if(a.leftPressed()==true){
-                if(power>0.00){
-                    power = power + 0.10;
-                    width = width - 50;
-                    powerDisplay.setWidth(width);
-                }
-            }
-            if(a.upPressed()==true){
-                powerY = powerY - 0.10;
-            }
-            if(a.downPressed()==true){
-                powerY = powerY + 0.10;
-            }
-            double xVelocity = power*maxVelocity;
-            double yVelocity = powerY*maxVelocity;
-            cueBall.setYVelocity(yVelocity);
-            cueBall.setXVelocity(xVelocity);
-            if(a.spacePressed()==true){
-                setup = false;
-            }
-            for(int i=0;i<7;i++){
-                a.pause();
+    private double speed;
+    private double width;
+    private double xLineStart;
+    private double yLineStart;
+    private double xLineEnd;
+    private double yLineEnd;
+    private double angle;
+    private double angleRadians;
+    private double tempDouble;
+    private double xVelocity;
+    private double yVelocity;
+    private boolean setup;
+    private Rectangle powerBar;
+    private Line lineDirection;
+    
+    public PoolCue(GameArena arena,Ball cueBall){
+        powerBar = new Rectangle(650.00,850.00,0.00,30.00,"RED",1);
+        xLineStart = cueBall.getXPosition();
+        yLineStart = cueBall.getYPosition();
+        xLineEnd = xLineStart + 30.00;
+        yLineEnd = yLineStart + 0.00;
+        lineDirection = new Line(xLineStart,yLineStart,xLineEnd,yLineEnd,5.00,"RED",4);
+        arena.addRectangle(powerBar);
+    }
+    public void setupShot(GameArena arena,Ball cueBall){
+        setup = false;
+        power = 0.00;
+        width = 0.00;
+        angle = 0.00;
+        tempDouble = cueBall.getXPosition() + 30.00;
+        lineDirection.setLinePosition(cueBall.getXPosition(),cueBall.getYPosition(),tempDouble,cueBall.getYPosition());
+        arena.addLine(lineDirection);
+        while(setup != true){
+            arena.pause();
+            setPower(arena);
+            setDirection(arena,cueBall);
+            if(arena.spacePressed()==true){
+                setup=true;
+                arena.removeLine(lineDirection);
             }
         }
-        return;
+    }
+    public void setPower(GameArena arena){
+        for(int i=0;i<5;i++){
+            arena.pause();
+        }
+        if(arena.upPressed()==true){
+            if(power <= 0.90){
+                power = power + 0.10;
+                width = width + 50.00;
+                powerBar.setWidth(width);
+            }
+        }
+        if(arena.downPressed() == true){
+            if(power >= 0.10){
+                power = power - 0.10;
+                width = width - 50.00;
+                powerBar.setWidth(width);
+            }
+        }
+        speed = maxVelocity*power;
+    }
+    public void setDirection(GameArena arena,Ball cueBall){
+        if(arena.rightPressed() == true){
+            angle = angle + 5.00;
+        }
+        if(arena.leftPressed() == true){
+            angle = angle - 5.00;
+        }
+        angleRadians = Math.toRadians(angle);
+        xLineStart = cueBall.getXPosition();
+        yLineStart = cueBall.getYPosition();
+        tempDouble = 30.00*Math.cos(angleRadians);
+        xLineEnd = tempDouble + xLineStart;
+        tempDouble = 30.00*Math.sin(angleRadians);
+        yLineEnd = tempDouble + yLineStart;
+        tempDouble = speed*Math.cos(angleRadians);
+        xVelocity = tempDouble;
+        tempDouble = speed*Math.sin(angleRadians);
+        yVelocity = tempDouble;
+        cueBall.setXVelocity(xVelocity);
+        cueBall.setYVelocity(yVelocity);
+        lineDirection.setLinePosition(xLineStart,yLineStart,xLineEnd,yLineEnd);
     }
 }

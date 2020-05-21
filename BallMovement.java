@@ -14,7 +14,7 @@ public class BallMovement{
     private boolean velocityFlag;
 
     public void moveBall(Ball ball,Ball[] balls,Ball[] pots){
-        if(ball.getXVelocity() <= 0.05 && ball.getYVelocity() <- 0.05){
+        if(ball.getXVelocity() <= 0.50 && ball.getYVelocity() <= 0.50){
             ball.setXVelocity(0.00);
             ball.setYVelocity(0.00);
         }
@@ -59,7 +59,6 @@ public class BallMovement{
         }
         ball.setXVelocity(xVelocity);
         ball.setYVelocity(yVelocity);
-        return;
     }
 
 
@@ -117,7 +116,6 @@ public class BallMovement{
             ball.setXVelocity(0.00);
             ball.setYVelocity(0.00);
         }
-        return;
     }
     public void collisionCheckSolid(Ball ball, Ball[] balls){
         collideFlag = false;
@@ -139,6 +137,18 @@ public class BallMovement{
             ball.setXVelocity(0.00);
             ball.setYVelocity(0.00);
         }
-        return;
+    }
+    public boolean checkVelocity(Ball[] balls,Ball cueBall){
+        velocityFlag = true;
+        for(int i=0;i<15;i++){
+            tempBalls[i]=balls[i];
+        }
+        tempBalls[15] = cueBall;
+        for(int j=0;j<16;j++){
+            Ball tempBall = tempBalls[j];
+            if(tempBall.getXVelocity() != 0.00 || tempBall.getYVelocity() != 0.00)
+            velocityFlag = false;
+        }
+        return velocityFlag;
     }
 }

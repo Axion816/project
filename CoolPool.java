@@ -10,11 +10,13 @@ public class CoolPool{
         balls = initial.getBalls();
         BallMovement movement = new BallMovement();
         arena.addBall(cueBall);
-        PoolCue cue = new PoolCue();
+        PoolCue cue = new PoolCue(arena,cueBall);
         Ball tempBall;
-        cue.changePower(arena,cueBall);
 
         while(true){
+            if(movement.checkVelocity(balls,cueBall)==true){
+                cue.setupShot(arena,cueBall);
+            }
             arena.pause();
             movement.moveBall(cueBall,initial.getBalls(),initial.getPots());
             for(int i=0;i<15;i++){
