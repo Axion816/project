@@ -6,10 +6,11 @@ public class Layout{
     Rectangle powerBar = new Rectangle(650.00,850.00,500.00,30.00,"WHITE",0);  
     Rectangle table = new Rectangle(315.00,165.00,1170.00,670.00,"GREY",1);
     Rectangle felt = new Rectangle(400.00,250.00,1000.00,500.00,"GREEN",2);
+    int ballIndex;
+    int index;
     //Game Balls
     Ball[] solid = new Ball[15];
-    BallMovement[] ballMovement = new BallMovement[15];
-    BallMovement[] exclusiveBalls = new BallMovement[14];
+    Ball[] exclusiveBalls = new Ball[14];
     public Layout(GameArena arena){
         arena.addRectangle(powerBar);
         arena.addLine(headSpot);
@@ -42,8 +43,6 @@ public class Layout{
         solid[14] = new Ball(1238.00,456.00,22,"ORANGE",5);
         for(int j=0;j<15;j++){
             arena.addBall(solid[j]);
-            Ball tempBall = solid[j];
-            ballMovement[j] = new BallMovement(tempBall);
         }
     }
     public Ball[] getPots(){
@@ -52,15 +51,19 @@ public class Layout{
     public Ball[] getBalls(){
         return solid;
     }
-    public BallMovement[] getMovementArray(){
-        return ballMovement;
-    }
 
-    public BallMovement[] getExclusiveBalls(int i){
-        BallMovement[] temp = ballMovement;
-        temp[i]=temp[14];
-        for(int j=0;j<14;j++){
-            exclusiveBalls[j] = temp[j];
+    public Ball[] getExclusiveBalls(Ball ball){
+        index = 0;
+        for(int j=0;j<15;j++){
+            if(solid[j]==ball){
+                ballIndex = j;
+            }
+        }
+        for(int k=0;k<15;k++){
+            if(k!=ballIndex){
+                exclusiveBalls[index]=solid[k];
+                index++;
+            }
         }
         return exclusiveBalls;
     }

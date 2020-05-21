@@ -15,8 +15,8 @@ public class Ball
 	private double size;				// The diameter of this Ball
 	private int layer;					// The layer of this ball is on.
 	private String colour;				// The colour of this Ball
-	private double velocityX;			// Velocity of the Ball in X axis.
-	private double velocityY;      		// Velocity of the Ball in Y axis.
+	private double xVelocity;			// Velocity of the Ball in X axis.
+	private double yVelocity;      		// Velocity of the Ball in Y axis.
 
 										// Permissable colours are:
 										// BLACK, BLUE, CYAN, DARKGREY, GREY,
@@ -38,8 +38,8 @@ public class Ball
 		this.size = diameter;
 		this.colour = col;
 		this.layer = layer;
-		this.velocityX = 0;				//Default velocity
-		this.velocityY =0;				//Default Velocity
+		this.xVelocity = 0;				//Default velocity
+		this.yVelocity =0;				//Default Velocity
 	}	
 
 	/**
@@ -49,40 +49,40 @@ public class Ball
 	 * @param diameter The diameter of the Ball (in pixels)
 	 * @param col The colour of the Ball (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
 	 * @param layer The layer this ball is to be drawn on. Objects with a higher layer number are always drawn on top of those with lower layer numbers.
-	 * @param vX The velocity in the X axis.
-	 * @param vY The velocity in the Y axis.
+	 * @param xV The velocity in the X axis.
+	 * @param yV The velocity in the Y axis.
 	 */
-	public Ball(double x, double y, double diameter, String col, int layer, double vX, double vY)
+	public Ball(double x, double y, double diameter, String col, int layer, double xV, double yV)
 	{
 		this.xPosition = x;
 		this.yPosition = y;
 		this.size = diameter;
 		this.colour = col;
 		this.layer = layer;
-		this.velocityX = vX;				//Set Velocity
-		this.velocityY = vY;				//Set Velocity
+		this.xVelocity = xV;				//Set Velocity
+		this.yVelocity = yV;				//Set Velocity
 	}	
-
-	/*
-	 Changes the velocity in x and y of the ball
-	*/
-	public void setVelocity(double vX, double vY){
-		velocityX=vX;
-		velocityY=vY;
-	}
 
 	/*
 	Returns the velocity in the x axis
 	*/
-	public double getVelocityX(){
-		return velocityX;
+	public double getXVelocity(){
+		return xVelocity;
 	}
 
 	/*
 	Returns the velocity in the y axis
 	*/
-	public double getVelocityY(){
-		return velocityY;
+	public double getYVelocity(){
+		return yVelocity;
+	}
+
+	public void setXVelocity(double xV){
+		xVelocity = xV;
+	}
+
+	public void setYVelocity(double yV){
+		yVelocity = yV;
 	}
 
 	/**

@@ -5,7 +5,7 @@ public class PoolCue{
     private boolean setup = true; 
     private double width=0;
     private double powerY=0;
-    public void changePower(GameArena a,BallMovement cueBall){
+    public void changePower(GameArena a,Ball cueBall){
         powerDisplay = new Rectangle(650.00,850.00,0.00,30.00,"RED",1);
         a.addRectangle(powerDisplay);
         while(setup == true){

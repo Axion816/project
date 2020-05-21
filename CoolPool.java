@@ -5,26 +5,22 @@ public class CoolPool{
 
         //Movement
         Ball cueBall = new Ball(650.00,500.00,22.00,"WHITE",5);
-        BallMovement cB = new BallMovement(cueBall);
-        BallMovement[] exclusiveBalls = new BallMovement[14];
+        Ball[] balls = new Ball[15];
+        Ball[] exclusiveBalls = new Ball[14];
+        balls = initial.getBalls();
+        BallMovement movement = new BallMovement();
         arena.addBall(cueBall);
-        BallMovement[] movementName = initial.getMovementArray();
-        Ball[] balls = initial.getBalls();
         PoolCue cue = new PoolCue();
-        cue.changePower(arena,cB);
+        Ball tempBall;
+        cue.changePower(arena,cueBall);
 
         while(true){
             arena.pause();
-            cB.collisionCheckCueBall(movementName);
-            cB.potCheck(initial.getPots());
-            cB.moveBall();
-            
+            movement.moveBall(cueBall,initial.getBalls(),initial.getPots());
             for(int i=0;i<15;i++){
-                exclusiveBalls = initial.getExclusiveBalls(i);
-                BallMovement tempMovement = movementName[i];
-                tempMovement.collisionCheck(exclusiveBalls,cB);
-                tempMovement.potCheck(initial.getPots());
-                tempMovement.moveBall();
+                tempBall = balls[i];
+                exclusiveBalls = initial.getExclusiveBalls(tempBall);
+                movement.moveBall(tempBall,exclusiveBalls,initial.getPots());
             }
             if(arena.escPressed()==true){
                 arena.exit();
