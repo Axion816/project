@@ -28,7 +28,7 @@ Player 1 can use WASD to change the shot.
 
 Player 2 can use the arrow keys to change the shot.
 
-If the cue ball is potted, the ball can be moved by next player on the line.
+If the cue ball is potted, the ball can be moved by the next player on the line.
     
 # Controls
 

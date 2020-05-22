@@ -732,7 +732,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 	}
 
 	/*
-	Returns if the user is pressed w,a,s,d respectively 
+	** Returns if the user has pressed w,a,s,d respectively 
 	*/
 
 	public boolean wPressed(){
