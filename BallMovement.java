@@ -13,19 +13,28 @@ public class BallMovement{
     private Ball[] tempBalls = new Ball[16];
     private boolean velocityFlag;
 
-    public void moveBall(Ball ball,Ball[] balls,Ball[] pots){
-        if(ball.getXVelocity() <= 0.50 && ball.getYVelocity() <= 0.50){
-            ball.setXVelocity(0.00);
-            ball.setYVelocity(0.00);
-        }
+    public void moveBall(Ball ball,Ball[] balls,Ball[] pots,PoolCue cue){
+        
         ball.move(ball.getXVelocity(),ball.getYVelocity());
         boundaryCheck(ball);
-        potCheck(ball,pots);
+        potCheck(ball,pots,cue);
         if (ball.getColour() == "WHITE"){
             collisionCheckCue(ball,balls);
         }
         if (ball.getColour() != "WHITE"){
             collisionCheckSolid(ball,balls);
+        }
+        xVelocity = ball.getXVelocity();
+        yVelocity = ball.getYVelocity();
+        if (xVelocity < 0){
+            xVelocity = -1.00*xVelocity;
+        }
+        if(yVelocity < 0){
+            yVelocity = -1.00*yVelocity;
+        }
+        if(xVelocity <= 0.20 && yVelocity <= 0.20){
+            ball.setXVelocity(0.00);
+            ball.setYVelocity(0.00);
         }
     }
 
@@ -61,17 +70,19 @@ public class BallMovement{
         ball.setYVelocity(yVelocity);
     }
 
-
-    public void potCheck(Ball ball, Ball[] pots){
+    //NEEDS FIXING FOR TURN BASED
+    public void potCheck(Ball ball, Ball[] pots,PoolCue cue){
         for(int i=0; i<6;i++){
             Ball pot = pots[i];
             if(ball.collides(pot)==true){
-                potConditions(ball);
+                potConditions(ball,cue);
             }
         }
     }
 
-    public void potConditions(Ball ball){
+    public void potConditions(Ball ball,PoolCue cue){
+        double playerOneSide = 157.50;
+        double playerTwoSide = 1642.50;
         if(ball.getColour() == "WHITE"){
             ball.setXPosition(650.00);
             ball.setYPosition(500.00);
@@ -126,9 +137,9 @@ public class BallMovement{
             Ball temp = balls[  i];
             if(ball.collides(temp) ==  true){
                 collideFlag = true;
-                tempVelocity = 0.90*(xVelocity + temp.getXVelocity());
+                tempVelocity = 0.99*(xVelocity + temp.getXVelocity());
                 temp.setXVelocity(tempVelocity);
-                tempVelocity = 0.90*(yVelocity + temp.getYVelocity());
+                tempVelocity = 0.99*(yVelocity + temp.getYVelocity());
                 temp.setYVelocity(tempVelocity);
             }
         }

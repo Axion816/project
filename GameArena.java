@@ -35,6 +35,10 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 	private boolean x = false;
 	private boolean z = false;
 	private boolean o = false;
+	private boolean w = false; 		//W Key Added
+	private boolean a = false;		//A Key Added
+	private boolean s = false;		//S Key Added
+	private boolean d = false; 		//D Key Added
 	private boolean leftMouse = false;
 	private boolean rightMouse = false;
 	private int mouseX = 0;
@@ -483,7 +487,11 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 	{
 		keyAction(e,true);
 	}
- 	
+
+ 	/*
+	*Added w,a,s,d to keyAction method
+	*/
+
 	public void keyAction(KeyEvent e,boolean yn) 
 	{
 		int code = e.getKeyCode();
@@ -510,6 +518,14 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 			z = yn;		
 		if (code == KeyEvent.VK_O)
 			o = yn;		
+		if (code == KeyEvent.VK_W)
+			w = yn;
+		if (code == KeyEvent.VK_A)
+			a = yn;
+		if (code == KeyEvent.VK_S)
+			s = yn;
+		if (code == KeyEvent.VK_D)
+			d = yn;
 	}
 
 	public void keyReleased(KeyEvent e){
@@ -713,6 +729,26 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 	public int getMousePositionY()
 	{
 		return mouseY;
+	}
+
+	/*
+	Returns if the user is pressed w,a,s,d respectively 
+	*/
+
+	public boolean wPressed(){
+		return w;
+	}
+
+	public boolean aPressed(){
+		return a;
+	}
+
+	public boolean sPressed(){
+		return s;
+	}
+
+	public boolean dPressed(){
+		return d;
 	}
 	
 }

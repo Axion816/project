@@ -15,10 +15,10 @@ public class CoolPool{
 
         while(true){
             if(movement.checkVelocity(balls,cueBall)==true){
-                cue.setupShot(arena,cueBall);
+                cue.setupShot(arena,cueBall,initial);
             }
             arena.pause();
-            movement.moveBall(cueBall,initial.getBalls(),initial.getPots());
+            movement.moveBall(cueBall,initial.getBalls(),initial.getPots(),cue);
             for(int i=0;i<15;i++){
                 tempBall = balls[i];
                 exclusiveBalls = initial.getExclusiveBalls(tempBall,cueBall);
