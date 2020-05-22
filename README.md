@@ -4,7 +4,13 @@ Change Directory to your desired file location.
 
 To clone the repository run the line: 
     
-    git clone https://codefeedback.lancaster.ac.uk/git110/Term3-collin19 /project.git
+    git clone https://codefeedback.lancaster.ac.uk/git110/Term3-collin19/project.git
+    
+Enter the appropriate credentials and the git repository will start downloading.
+
+Change Directory to project by running the line:
+
+    cd project/
 
 To Compile the game run the line:
 
