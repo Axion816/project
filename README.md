@@ -4,17 +4,17 @@ Change Directory to your desired file location.
 
 To clone the repository run the line: 
     
-git clone https://codefeedback.lancaster.ac.uk/git110/Term3-collin19 /project.git
+    git clone https://codefeedback.lancaster.ac.uk/git110/Term3-collin19 /project.git
 
 To Compile the game run the line:
 
-javac *.java
+    javac *.java
 
 # Playing the game
 
 When you want to start playing the game run the line:
     
-java CoolPool
+    java CoolPool
 
 A window should open and you can start playing.
 
