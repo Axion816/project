@@ -64,22 +64,34 @@ public class Ball
 	}	
 
 	/*
-	Returns the velocity in the x axis
+	** getXVelocity()
+	** Returns the velocity in the x axis
 	*/
 	public double getXVelocity(){
 		return xVelocity;
 	}
 
 	/*
-	Returns the velocity in the y axis
+	** getYVelocity()
+	** Returns the velocity in the y axis
 	*/
 	public double getYVelocity(){
 		return yVelocity;
 	}
 
+	/*
+	** setXVelocity()
+	** Allows user to set the ball's velocity in the x axis
+	*/
+
 	public void setXVelocity(double xV){
 		xVelocity = xV;
 	}
+
+	/*
+	** setYVelocity()
+	** Allows user to set the ball's velocity in the y axis
+	*/ 
 
 	public void setYVelocity(double yV){
 		yVelocity = yV;
